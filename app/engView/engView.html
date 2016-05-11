@@ -1,0 +1,33 @@
+<div class="row no-margin-bottom" ng-repeat="verb in verbs">
+    <div class="col word-col offset-s1 offset-m1 s3 m3 center">
+        <input ng-disabled="verb.answered == 0" class="col s6 m6 center input-field validate"
+               ng-class="!showAnswers? '' :  verb[0].correct? 'valid' : 'invalid'" ng-model="verb[0].input">
+        <input class="col s6 m6 center input-field answer green-text" readonly
+               value="{{verb[0].value}}" ng-show="showAnswers && !verb[0].correct">
+    </div>
+    <div class="col word-col offset-s1 offset-m1 s3 m3 center">
+        <input ng-disabled="verb.answered == 1" class="col s6 m6 center input-field validate"
+               ng-class="!showAnswers? '' :  verb[1].correct? 'valid' : 'invalid'" ng-model="verb[1].input">
+        <input class="col s6 m6 center input-field answer green-text" readonly
+               value="{{verb[1].value}}" ng-show="showAnswers && !verb[1].correct">
+    </div>
+    <div class="col word-col offset-s1 offset-m1 s3 m3 center">
+        <input ng-disabled="verb.answered == 2" class="col s6 m6 center input-field validate"
+               ng-class="!showAnswers? '' :  verb[2].correct? 'valid' : 'invalid'" ng-model="verb[2].input">
+        <input class="col s6 m6 center input-field answer green-text" readonly
+               value="{{verb[2].value}}" ng-show=" showAnswers &&!verb[2].correct">
+    </div>
+</div>
+
+<div class="row margin-top">
+    <div class="input-field col s1 m1">
+        <input id="inputCountVerbs" type="text" class="validate" min="1" max="{{totalVerbs}}" ng-model="countVerbs">
+        <label class="active" for="inputCountVerbs">Verbs count</label>
+    </div>
+    <p class="range-field  col s2 m2">
+        <input type="range" min="1" max="{{totalVerbs}}" ng-model="countVerbs" ng-change="updateCountVerbs();" />
+    </p>
+    <a class="input-field col s2 m2 waves-effect waves-light btn" href="" ng-click="refreshQuestions();">New</a>
+    <a class="input-field col offset-s4 offset-m4 s2 m2 waves-effect waves-light btn" href="" ng-click="checkAnswers();">Done</a>
+    <p class="col badge" ng-class="mistakesCount === 0? 'green' : 'red'" ng-show="showAnswers">{{ mistakesCount }}</p>
+</div>

@@ -1,0 +1,21 @@
+/* app css stylesheet */
+body{
+  margin: 15px;
+}
+
+.no-margin-bottom{
+  margin-bottom: 0;
+}
+
+.word-col{
+  height: 40px;
+}
+
+.answer{
+  font-size: large;
+  font-weight: bold;
+}
+
+.margin-top{
+  margin-top: 15px;
+}
