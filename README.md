@@ -1,4 +1,4 @@
-# irregular-verbs — the AngularJS project for study irregular verbs
+# irregular-verbs — the AngularJS project for studying irregular verbs
 
 This project is a typical [AngularJS](http://angularjs.org/) web app. It was developed based on [angular-seed](https://github.com/angular/angular-seed).
 You can use it to check your knowledge of irregular verbs.
